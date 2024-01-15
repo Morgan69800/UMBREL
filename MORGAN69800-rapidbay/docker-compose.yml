@@ -8,9 +8,9 @@ services:
     devices:
       - /dev/net/tun
     environment:
-      - USER="Zexm4Y48bqUPpwCburEzHsZ7"
-      - PASS="FjRJkkBBiwMqESkmKwStMgXy"
-      - COUNTRY="Netherlands"
+      - USER=adrien.baggio@gmail.com
+      - PASS=NordVPN03112023
+      - COUNTRY=Netherlands
     image: "azinchen/nordvpn"
     ports:
       - 5000:5000
