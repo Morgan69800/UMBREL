@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3"
 
 services:
 
@@ -14,6 +14,7 @@ services:
     image: "azinchen/nordvpn"
     ports:
       - 5000:5000
+    restart: unless-stopped
     
   rapidbay:
     image: shnoobins/rapidbay:latest
@@ -22,4 +23,4 @@ services:
       - PASSWORD=safran
       - JACKETT_HOST=http://louloushome.freeboxos.fr:9117
       - JACKETT_API_KEY=pdmcg23fssaq63ilfozr939n8mob7ioe
-    restart: on-failure
+    restart: unless-stopped
