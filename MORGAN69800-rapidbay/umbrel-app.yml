@@ -5,14 +5,14 @@ tagline: Test implémentation serveur Rapidbay
 icon: https://us.123rf.com/450wm/skvector/skvector2107/skvector210700018/171364004-cr%C3%A2ne-en-style-cartoon-symbole-de-pirate-effrayant.jpg?ver=6
 category: Development
 version: "1.0.0"
-port: 5000
+port: 6000
 description: >-
   Add your app's description here.
 
 
   You can also add newlines!
 
-developer: Umbrel
+developer: Morgan69800
 website: https://umbrel.com
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel-hello-world-app
