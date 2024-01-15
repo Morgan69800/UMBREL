@@ -2,9 +2,22 @@ version: "3.7"
 
 services:
 
+  nordvpn:
+    cap_add:
+    - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    environment:
+      - USER=Zexm4Y48bqUPpwCburEzHsZ7
+      - PASS=FjRJkkBBiwMqESkmKwStMgXy
+      - COUNTRY=Netherlands
+    image: "azinchen/nordvpn"
     
-  web:
+  rapidbay:
     image: shnoobins/rapidbay:latest
+    network_mode: "service:nordvpn"
+    environment:
+      - PASSWORD=safran
+      - JACKETT_HOST=http://louloushome.freeboxos.fr:9117
+      - JACKETT_API_KEY=pdmcg23fssaq63ilfozr939n8mob7ioe
     restart: on-failure
-    ports:
-      - 5000:5000
