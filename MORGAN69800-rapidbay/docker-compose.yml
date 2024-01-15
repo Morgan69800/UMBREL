@@ -8,8 +8,8 @@ services:
     devices:
       - /dev/net/tun
     environment:
-      - USER=Zexm4Y48bqUPpwCburEzHsZ7
-      - PASS=FjRJkkBBiwMqESkmKwStMgXy
+      - USER="Zexm4Y48bqUPpwCburEzHsZ7"
+      - PASS="FjRJkkBBiwMqESkmKwStMgXy"
       - COUNTRY=Netherlands
     image: "azinchen/nordvpn"
     
