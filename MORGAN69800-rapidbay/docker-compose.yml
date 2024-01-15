@@ -4,7 +4,7 @@ services:
 
   nordvpn:
     cap_add:
-    - NET_ADMIN
+      - NET_ADMIN
     devices:
       - /dev/net/tun
     environment:
