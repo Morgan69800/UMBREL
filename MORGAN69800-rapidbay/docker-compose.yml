@@ -11,7 +11,8 @@ services:
       - VPN_SERVICE_PROVIDER=protonvpn
       - OPENVPN_USER=DR6oo3BPnDdMZ5DC
       - OPENVPN_PASSWORD=2NezNDOwtI5yQfRq4A3yX4JkFO0WsYGC
-      - SERVER_REGIONS=Switzerland
+      - SERVER_COUNTRIES=Netherlands
+      - FREE_ONLY=on
     networks:
       - mynetwork
     ports:
