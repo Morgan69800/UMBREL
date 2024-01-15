@@ -5,10 +5,13 @@ services:
   app_proxy:
     environment:
       # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: MORGAN69800-rapidbay_server_1
+      APP_HOST: MORGAN69800-rapidbay_web_1
       APP_PORT: 5555
     
-  server:
+  web:
     image: hauxir/rapidbay:latest
     user: "1000:1000"
-    init: true
+    restart: on-failure
+    stop_grace_period: 1m
+    ports:
+      - 5000:5000
