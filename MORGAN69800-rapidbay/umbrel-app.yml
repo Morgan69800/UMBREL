@@ -1,8 +1,8 @@
 manifestVersion: 1
 id: MORGAN69800-rapidbay
 name: Rapidbay
-tagline: Replace this tagline with your app's tagline
-icon: https://svgur.com/i/mvA.svg
+tagline: Test implémentation serveur Rapidbay
+icon: https://us.123rf.com/450wm/skvector/skvector2107/skvector210700018/171364004-cr%C3%A2ne-en-style-cartoon-symbole-de-pirate-effrayant.jpg?ver=6
 category: Development
 version: "1.0.0"
 port: 5000
@@ -19,7 +19,7 @@ submission: https://github.com/getumbrel/umbrel-hello-world-app
 repo: https://github.com/getumbrel/umbrel-hello-world-app
 support: https://github.com/getumbrel/umbrel-hello-world-app/issues
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://us.123rf.com/450wm/skvector/skvector2107/skvector210700018/171364004-cr%C3%A2ne-en-style-cartoon-symbole-de-pirate-effrayant.jpg?ver=6
   - https://i.imgur.com/yyVG0Jb.jpeg
   - https://i.imgur.com/yyVG0Jb.jpeg
 releaseNotes: >-
