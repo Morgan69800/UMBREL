@@ -2,30 +2,36 @@ version: "3"
 
 services:
 
-  nordvpn:
+  vpn:
+    container_name: vpn
+    image: qmcgaw/gluetun
     cap_add:
       - NET_ADMIN
-    devices:
-      - /dev/net/tun
     environment:
-      - USER=adrien.baggio@gmail.com
-      - PASS=NordVPN03112023
-      - COUNTRY=Spain;Hong Kong;IE;131
-      - GROUP=Standard VPN servers
-      - RANDOM_TOP=10
-      - RECREATE_VPN_CRON=5 */3 * * *
-      - NETWORK=192.168.1.0/24;192.168.2.0/24
-      - OPENVPN_OPTS=--mute-replay-warnings
-    image: "azinchen/nordvpn"
+      - VPN_SERVICE_PROVIDER=nordvpn
+      - OPENVPN_USER=Zexm4Y48bqUPpwCburEzHsZ7
+      - OPENVPN_PASSWORD=FjRJkkBBiwMqESkmKwStMgXy
+      - SERVER_REGIONS=Switzerland
+    networks:
+      - mynetwork
     ports:
       - 5000:5000
-    restart: unless-stopped
+    restart: "unless-stopped"
+
+  
+      
     
   rapidbay:
     image: shnoobins/rapidbay:latest
-    network_mode: "service:nordvpn"
+    network_mode: "service:vpn"
     environment:
       - PASSWORD=safran
       - JACKETT_HOST=http://louloushome.freeboxos.fr:9117
       - JACKETT_API_KEY=pdmcg23fssaq63ilfozr939n8mob7ioe
     restart: unless-stopped
+
+
+networks:
+  mynetwork:                                 
+    external: true
+  
