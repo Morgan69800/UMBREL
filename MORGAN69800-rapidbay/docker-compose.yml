@@ -6,6 +6,5 @@ services:
   web:
     image: shnoobins/rapidbay:latest
     restart: on-failure
-    stop_grace_period: 1m
     ports:
       - 5000:5000
