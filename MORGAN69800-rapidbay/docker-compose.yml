@@ -2,29 +2,27 @@ version: "3"
 
 services:
 
-  vpn:
-    container_name: vpn
-    image: qmcgaw/gluetun
+  nordvpn:
+    container_name: NordVPN
     cap_add:
       - NET_ADMIN
+    devices:
+      - /dev/net/tun
     environment:
-      - VPN_SERVICE_PROVIDER=protonvpn
-      - OPENVPN_USER=DR6oo3BPnDdMZ5DC
-      - OPENVPN_PASSWORD=2NezNDOwtI5yQfRq4A3yX4JkFO0WsYGC
-      - SERVER_COUNTRIES=Netherlands
-      - FREE_ONLY=on
-    networks:
-      - mynetwork
+      - USER=Zexm4Y48bqUPpwCburEzHsZ7
+      - PASS=FjRJkkBBiwMqESkmKwStMgXy
+      - COUNTRY=Netherlands
+    image: "azinchen/nordvpn"
+    restart: unless-stopped
     ports:
       - 5000:5000
-    restart: "unless-stopped"
 
   
       
     
   rapidbay:
     image: shnoobins/rapidbay:latest
-    network_mode: "service:vpn"
+    network_mode: "service:nordvpn"
     environment:
       - PASSWORD=safran
       - JACKETT_HOST=http://louloushome.freeboxos.fr:9117
