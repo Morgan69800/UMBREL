@@ -30,7 +30,3 @@ services:
     restart: unless-stopped
 
 
-networks:
-  mynetwork:                                 
-    external: true
-  
