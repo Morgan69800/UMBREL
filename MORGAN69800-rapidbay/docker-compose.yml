@@ -2,33 +2,19 @@ version: "3"
 
 services:
 
-  nordvpn:
-    container_name: NordVPN
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun
-    environment:
-      - USER=Zexm4Y48bqUPpwCburEzHsZ7
-      - PASS=FjRJkkBBiwMqESkmKwStMgXy
-      - COUNTRY=Netherlands
-    image: "azinchen/nordvpn"
-    restart: unless-stopped
-    ports:
-      - 9000:9000
 
-  
       
     
   peerflix:
     image: ronnieonthehub/peerflix-server
-    network_mode: "service:nordvpn"
     environment:
       - SECURE=true
       - USERNAME=morgan
       - PASSWORD=hiccup
     volumes:
       - ${APP_DATA_DIR}/peerflix:/mnt/torrents/torrent-stream
+    ports:
+      - 9000:9000
     restart: unless-stopped
 
 
