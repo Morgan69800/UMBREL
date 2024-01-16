@@ -27,6 +27,8 @@ services:
       - SECURE=true
       - USERNAME=morgan
       - PASSWORD=hiccup
+    volumes:
+      - ${APP_DATA_DIR}/peerflix:/mnt/torrents/torrent-stream
     restart: unless-stopped
 
 
