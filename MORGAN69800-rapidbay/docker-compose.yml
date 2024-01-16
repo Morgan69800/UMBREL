@@ -2,32 +2,16 @@ version: "3"
 
 services:
 
-  nordvpn:
-    container_name: NordVPN
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun
-    environment:
-      - USER=Zexm4Y48bqUPpwCburEzHsZ7
-      - PASS=FjRJkkBBiwMqESkmKwStMgXy
-      - COUNTRY=Netherlands
-    image: "azinchen/nordvpn"
+  rapidbay:
+    container_name: Rapidbay
+    image: hauxir/rapidbay:latest
     restart: unless-stopped
+    environment:
+      - SUBTITLE_LANGUAGES="[]"
+      - JACKETT_HOST=http://91.171.179.183:9117
+      - JACKETT_API_KEY=kybympbwhhcjut6m6le2x3uidxp2h26n
     ports:
-      - 9000:9000
-      
-    
-  peerflix:
-    network_mode: "service:nordvpn"
-    image: ronnieonthehub/peerflix-server
-    environment:
-      - SECURE=true
-      - USERNAME=morgan
-      - PASSWORD=hiccup
-    volumes:
-      - ${APP_DATA_DIR}/peerflix:/mnt/torrents/torrent-stream
-    restart: unless-stopped
+      - 5000:5000
 
 
 
