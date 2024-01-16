@@ -15,18 +15,19 @@ services:
     image: "azinchen/nordvpn"
     restart: unless-stopped
     ports:
-      - 5000:5000
+      - 9000:9000
 
   
       
     
-  rapidbay:
-    image: shnoobins/rapidbay:latest
+  peerflix:
+    image: ronnieonthehub/peerflix-server
     network_mode: "service:nordvpn"
     environment:
-      - PASSWORD=safran
-      - JACKETT_HOST=http://louloushome.freeboxos.fr:9117
-      - JACKETT_API_KEY=pdmcg23fssaq63ilfozr939n8mob7ioe
+      - SECURE=true
+      - USERNAME=morgan
+      - PASSWORD=hiccup
     restart: unless-stopped
+
 
 
