@@ -2,13 +2,14 @@ version: "3.7"
 
 services:
 
-  app_proxy:
+  peerflix:
+    container_name: STREAMING-peerflix
+    image: s8n02/peerflix-server-with-password
     environment:
-      # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: MORGAN69800-rapidbay_server_1
-      APP_PORT: 5000
-    
-  server:
-    image: getumbrel/community-app-store-hello-world:latest
-    user: "1000:1000"
-    init: true
+      - USER=morgan
+      - PASSWORD=hiccup
+    volumes:
+      - ./peerflix:/tmp/torrent-stream
+    ports:
+      - 9000:9000
+    restart: unless-stopped
