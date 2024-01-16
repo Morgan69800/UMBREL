@@ -9,7 +9,7 @@ services:
       - USER=morgan
       - PASSWORD=hiccup
     volumes:
-      - ./peerflix:/tmp/torrent-stream
+      - ${APP_DATA_DIR}/peerflix:/tmp/torrent-stream
     ports:
       - 9000:9000
     restart: unless-stopped
